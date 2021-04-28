@@ -24,7 +24,7 @@ max_file = 30641629
 
 # Extra details
 __version__ = '0.0.1'
-__author__ = 'pokurt'
+__author__ = 'DTB'
 
 # Global Variables
 bot = bot(name)
