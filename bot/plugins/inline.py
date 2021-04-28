@@ -53,7 +53,7 @@ async def inline_func(client, query):
                         description=artist,
                         thumb_url=thumb,
                         input_message_content=types.InputTextMessageContent(
-                            f'**Başlıq**: {title}\n**Sənətçi**: {artist}[\u200c\u200c\u200e]({image})'
+                            f'**Mahnının Adı**: {title}\n**İfaçı**: {artist}[\u200c\u200c\u200e]({image})'
                         ),
                         reply_markup=types.InlineKeyboardMarkup(
                             [
@@ -77,7 +77,7 @@ async def inline_func(client, query):
             return await client.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text='cannot find the Song',
+                switch_pm_text='Mahnını tapa bilmirəm',
                 switch_pm_parameter='help_inline',
             )
             return
@@ -86,7 +86,7 @@ async def inline_func(client, query):
             await client.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text='Müğənni adı daxil edin',
+                switch_pm_text='İfaçı adı daxil edin',
                 switch_pm_parameter='help_inline',
             )
             return
@@ -95,7 +95,7 @@ async def inline_func(client, query):
             return await client.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text='Sənətçi tapılmadı',
+                switch_pm_text='İfaçı tapılmadı',
                 switch_pm_parameter='help_inline',
             )
             return
@@ -106,7 +106,7 @@ async def inline_func(client, query):
                         description=None,
                         thumb_url=artist.avatar or None,
                         input_message_content=types.InputTextMessageContent(
-                            f'**Sənətçinin adı:**{artist.name} [\u200c\u200c\u200e]({artist.avatar})'
+                            f'**İfaçının adı:**{artist.name} [\u200c\u200c\u200e]({artist.avatar})'
                         ),
                         reply_markup=types.InlineKeyboardMarkup(
                             [
@@ -125,7 +125,7 @@ async def inline_func(client, query):
             await client.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text='Müğənni kimliyini daxil edin',
+                switch_pm_text='İfaçı kimliyini daxil edin',
                 switch_pm_parameter='help_inline',
             )
             return
@@ -134,7 +134,7 @@ async def inline_func(client, query):
             return await client.answer_inline_query(
                 query.id,
                 results=answers,
-                switch_pm_text='Sənətçi tapılmadı',
+                switch_pm_text='İfaçı tapılmadı',
                 switch_pm_parameter='help_inline',
             )
             return
@@ -145,7 +145,7 @@ async def inline_func(client, query):
                         description=track.subtitle,
                         thumb_url=track.apple_music_url or None,
                         input_message_content=types.InputTextMessageContent(
-                            f'**Başlıq:** {track.title}\n**Sənətçi**: {track.subtitle} [\u200c\u200c\u200e]({track.apple_music_url})'
+                            f'**Mahnının Adı:** {track.title}\n**İfaçı**: {track.subtitle} [\u200c\u200c\u200e]({track.apple_music_url})'
                         ),
                         reply_markup=types.InlineKeyboardMarkup(
                             [
