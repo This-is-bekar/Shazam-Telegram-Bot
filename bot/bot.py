@@ -27,11 +27,11 @@ class bot(Client):
 
     async def start(self):
         await super().start()
-        print("bot started. Hi.")
+        print("Salam bot başladı.")
 
     async def stop(self, *args):
         await super().stop()
-        print("bot stopped. Bye.")
+        print("Sağolunbot dayandı.")
 
     async def recognize(self, path):
         return await shazam.recognize_song(path)
