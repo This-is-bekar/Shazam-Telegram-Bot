@@ -21,7 +21,7 @@ async def voice_handler(_, message):
             '**⚠️ Səsi tanıya bilmirəm**'
         )
         return
-    out = f'**Başlıq**: `{r["title"]}`\n'
+    out = f'**Mahnının adı**: `{r["title"]}`\n'
     out += f'**Sənətçi**: `{r["subtitle"]}`\n'
     buttons = types.InlineKeyboardMarkup(
         [
