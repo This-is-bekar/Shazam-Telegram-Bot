@@ -10,7 +10,7 @@ async def voice_handler(_, message):
     file_size = message.audio or message.video or message.voice
     if max_file < file_size.file_size :
         await message.reply_text(
-            "**⚠️ Max file size has been reached.**"
+            "**⚠️ Maksimum fayl ölçüsü əldə edildi.**"
         )
         return
     file = await message.download(f'{bot.rnd_id()}.mp3')
@@ -18,32 +18,32 @@ async def voice_handler(_, message):
     os.remove(file)
     if r is None:
         await message.reply_text(
-            '**⚠️ Cannot recognize the audio**'
+            '**⚠️ Səsi tanıya bilmirəm**'
         )
         return
-    out = f'**Title**: `{r["title"]}`\n'
-    out += f'**Artist**: `{r["subtitle"]}`\n'
+    out = f'**Başlıq**: `{r["title"]}`\n'
+    out += f'**Sənətçi**: `{r["subtitle"]}`\n'
     buttons = types.InlineKeyboardMarkup(
         [
             [
                 types.InlineKeyboardButton(
-                    '🎼 Related Songs',
+                    '🎼 Oxşar mahnılar',
                     switch_inline_query_current_chat=f'related {r["key"]}',
                 ),
                 types.InlineKeyboardButton(
-                    '🔗 Share',
+                    '🔗 Paylaş',
                     url=f'{r["share"]["html"]}'
                 )
             ],
             [
                 types.InlineKeyboardButton(
-                    '🎵 Listen',
+                    '🎵 Dinləmək',
                     url=f'{r["url"]}'
                 )
             ],
             [
                 types.InlineKeyboardButton(
-                    f'💿 More Tracks from {r["subtitle"]}',
+                    f'💿 {r["subtitle"]} - dən daha çox musiqi',
                     switch_inline_query_current_chat=f'tracks {r["artists"][0]["id"]}',
                 )
             ]
