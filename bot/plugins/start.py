@@ -7,5 +7,5 @@ from pyrogram import filters
 )
 async def alive(_, message):
     await message.reply(
-        f"Hi {message.from_user.mention}, Bu qeyri-rəsmi bir Shazam Telegram Botudur.\n\nℹ️ Mənə audio, video və ya səsli qeyd göndərə bilərsiniz, Sizə shazamla nəticələrini göndərəcəm.."
+        f"Salam {message.from_user.mention}, Bu qeyri-rəsmi bir Shazam Telegram Botudur.\n\nℹ️ Mənə audio, video və ya səsli qeyd göndərə bilərsiniz, Sizə shazamla nəticələrini göndərəcəm.."
     )
